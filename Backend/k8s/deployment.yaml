@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+      - name: backend
+        image: northamerica-northeast1-docker.pkg.dev/braided-upgrade-435523-j8/backend/backend
+        ports:
+        - containerPort: 5000
+        envFrom:
+        - secretRef:
+            name: db-credentials
+        - configMapRef:
+            name: gcp-config  # Include this line to reference the ConfigMap
