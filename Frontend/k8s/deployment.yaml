@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+  namespace: frontend  # Update to your desired namespace
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: northamerica-northeast1-docker.pkg.dev/braided-upgrade-435523-j8/frontend/forntend # Use your Nginx image
+        ports:
+        - containerPort: 80
+        # You can include additional configurations here if needed.
