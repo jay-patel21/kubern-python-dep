@@ -1,1 +1,14 @@
 Backend/braided-upgrade-435523-j8-d7fd30ea3f8b.json
+# Virtual Environment
+Backend/venv/
+Pipfile.lock
+
+# Python Compiled Files
+*.pyc
+__pycache__/
+
+# Flask instance folder
+instance/
+
+# Environment Variables
+.env
