@@ -1,0 +1,34 @@
+steps:
+  # Step 1: Build and push the Docker image for frontend
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/frontend:latest', './frontend']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/frontend:latest']
+
+  # Step 2: Build and push the Docker image for backend
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/backend:latest', './backend']
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/backend:latest']
+
+  # Step 3: Deploy the frontend to GCP (e.g., Cloud Run or GKE)
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: [
+      'gcloud', 'run', 'deploy', 'frontend',
+      '--image', 'gcr.io/$PROJECT_ID/frontend:latest',
+      '--region', 'us-central1', # Adjust region as needed
+      '--platform', 'managed',
+      '--allow-unauthenticated'
+    ]
+
+  # Step 4: Deploy the backend to GCP
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    args: [
+      'gcloud', 'run', 'deploy', 'backend',
+      '--image', 'gcr.io/$PROJECT_ID/backend:latest',
+      '--region', 'us-central1',
+      '--platform', 'managed',
+      '--allow-unauthenticated'
+    ]
+
+timeout: '1200s' # Set a reasonable timeout for the build
