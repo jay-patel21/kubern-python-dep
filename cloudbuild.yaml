@@ -4,13 +4,13 @@ options:
 steps:
   # Step 1: Build and push the Docker image for frontend
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/frontend:latest', './frontend']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/frontend:latest', './Frontend']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/frontend:latest']
 
   # Step 2: Build and push the Docker image for backend
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/backend:latest', './backend']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/backend:latest', './Backend']
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/$PROJECT_ID/backend:latest']
 
