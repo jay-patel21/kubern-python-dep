@@ -1,3 +1,6 @@
+options:
+  logging: CLOUD_LOGGING_ONLY
+
 steps:
   # Step 1: Build and push the Docker image for frontend
   - name: 'gcr.io/cloud-builders/docker'
