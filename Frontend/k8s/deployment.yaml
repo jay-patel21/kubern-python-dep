@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: northamerica-northeast1-docker.pkg.dev/braided-upgrade-435523-j8/frontend/forntend # Use your Nginx image
+        image: gcr.io/hardy-tine-435523-b0/backend
         ports:
         - containerPort: 80
         # You can include additional configurations here if needed.
