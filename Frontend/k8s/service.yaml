@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx
+  name: frontend
   namespace: frontend  # Update to your desired namespace
 spec:
   type: LoadBalancer  # Use LoadBalancer to expose the service externally, or ClusterIP for internal access only
@@ -9,4 +9,4 @@ spec:
     - port: 80
       targetPort: 80  # This should match the containerPort in your deployment
   selector:
-    app: nginx  # This should match the labels in your deployment
+    app: frontend  # This should match the labels in your deployment
