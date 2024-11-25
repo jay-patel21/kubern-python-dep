@@ -2,9 +2,9 @@ options:
   logging: CLOUD_LOGGING_ONLY
   env:
     - 'CLOUDSDK_CONTAINER_CLUSTER=ica-4'
-    - 'CLOUDSDK_CONTAINER_ZONE=us-east1-b'
+    - 'CLOUDSDK_CONTAINER_ZONE=us-central1-b'
     - 'CLOUDSDK_CORE_PROJECT=hardy-tine-435523-b0'
-    - 'CLOUDSDK_COMPUTE_REGION=us-east1-b'
+    - 'CLOUDSDK_COMPUTE_REGION=us-central1-b'
 
 steps:
   - name: 'gcr.io/cloud-builders/docker'
