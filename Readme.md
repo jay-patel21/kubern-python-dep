@@ -1,4 +1,4 @@
-# GKE Deployed Application with NGINX Frontend, Flask Backend, GCP Bucket, and PostgreSQL
+# GKE Deployed Application with NGINX Frontend, Flask Backend, GCP Bucket, and PostgreSQL DB
 
 ## Project Overview
 
