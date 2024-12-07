@@ -8,9 +8,9 @@ options:
 
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/$PROJECT_ID/frontend:$SHORT_SHA', './Frontend']
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/nginx:$SHORT_SHA', './Frontend']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/frontend:$SHORT_SHA']
+    args: ['push', 'gcr.io/$PROJECT_ID/nginx:$SHORT_SHA']
 
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 'gcr.io/$PROJECT_ID/backend:$SHORT_SHA', './Backend']
