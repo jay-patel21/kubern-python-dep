@@ -1,5 +1,6 @@
 # GKE Deployed Application with NGINX Frontend, Flask Backend, GCP Bucket, and PostgreSQL DB
 
+
 ## Project Overview
 
 This project consists of a frontend application served by NGINX and a backend powered by Flask. Both services are deployed on **Google Kubernetes Engine (GKE)**. The application also integrates the functionality to upload files to a **Google Cloud Storage Bucket**, and it connects to a **PostgreSQL** database hosted on **Google Cloud Platform (GCP)**.
